@@ -120,7 +120,6 @@ addons:
     project:
       name: "plusvic/yara"
       description: "Build submitted via Travis CI"
-    notification_email: plusvic@gmail.com
     build_command_prepend: "./configure; make clean"
     build_command: "make -j 4"
     branch_pattern: master

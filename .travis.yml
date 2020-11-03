@@ -11,8 +11,7 @@ matrix:
       # The certificate for scan.coverity.com is too new and is not recognized by
       # wget. This command adds the certificate to /etc/ssl/certs/ca-certificates.crt
       # See: https://github.com/travis-ci/travis-ci/issues/6142
-      before_install: echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
-      install: |
+      install:
         sudo apt-get update
         sudo apt-get install -y \
             autoconf \

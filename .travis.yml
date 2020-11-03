@@ -105,14 +105,3 @@ script: |
 
 after_failure: if [ -e test-suite.log ]; then cat test-suite.log; fi
 
-addons:
-  apt:
-    packages:
-      - ca-certificates
-  coverity_scan:
-    project:
-      name: "plusvic/yara"
-      description: "Build submitted via Travis CI"
-    build_command_prepend: "./configure; make clean"
-    build_command: "make -j 4"
-    branch_pattern: master
